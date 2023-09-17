@@ -4,7 +4,7 @@
     --fonteParagrafos: 'OpenSans', sans-serif;
     
     /* ---- PALETA DE CORES ----- */
-    --primario: ##784D3C;
+    --primario: #784D3C;
     --branco: #ffffff;
     --preto: #000000;
     --border: #e1e1e1;
@@ -31,6 +31,7 @@ body{
 .contenedor{
     max-width: 120rem;
     width: 90%;
+    /* width: min(90%, 120rem); */
     margin: 0 auto;
 }
 
@@ -40,6 +41,7 @@ a{
 
 h1, h2, h3, h4{
     font-family: var(--fonteHeading);
+    line-height: 1.2rem;
 }
 
 h1{
@@ -100,6 +102,9 @@ img{
     }
 }
 
+.barra{
+    padding-top: 4rem;
+}
 
 @media (min-width: 768px){
     .barra{
@@ -163,6 +168,11 @@ img{
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
+}
+
+.butao:hover{
+ cursor: pointer;
 }
 
 @media (min-width: 768px){
@@ -175,3 +185,135 @@ img{
     background-color: var(--preto);
 }
 
+
+/* -----  SIDEBAR CURSOS  ------ */
+.butao--secundario{
+    background-color: var(--primario);
+}
+
+.cursos{
+    list-style: none;
+}  
+
+.widget-curso{
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border: none;
+    margin: 0;
+}
+
+.widget-curso__label{
+    font-family: var(--fonteHeading);
+    font-weight: 700;
+}
+
+.widget-curso__info{
+    font-weight: normal;
+}
+
+.widget-curso__info,
+.widget-curso__label{
+    font-size: 2rem;
+}
+
+/* ---- FOOTER ---- */
+.footer{
+    background-color: var(--preto);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/* ------ SOBRE NOS  ------- */
+
+@media (min-width: 768px){
+    /* .sobre-nos{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sobre-nos__image{
+        flex: 0 0 calc(50% - 1rem);
+    }
+
+    .sobre-nos__texto{
+        flex: 0 0 calc(50% - 1rem);
+    } */
+
+    .sobre-nos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/* CURSOS */
+
+.curso{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px){
+    .curso{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 1rem;
+    }
+}
+
+.curso:last-of-type{
+    border: none;
+}
+
+.curso__label{
+    font-family: var(--fonteHeading);
+    font-weight: 700;
+}
+
+.curso__info{
+    font-weight: normal;
+}
+
+.curso__info,
+.curso__label{
+    font-size: 2rem;
+}
+
+/* CONTATO */
+.contato-bg{
+    background-image: url(../blogdecafe_inicio/img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario{
+    background-color: var(--branco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field{
+    flex: 1;
+    border: 1px solid var(--border);
+}
+
+.campo__field--textarea{
+    flex: 1;
+    height: 20rem;
+}
